@@ -20,17 +20,35 @@
     
     <TabControl>
         <TabItem Header="Профиль">
-            
             <StackPanel Spacing="10">
                 <ProgressBar Margin=" 0 10 0 0" VerticalAlignment="Center" Width="10" IsIndeterminate="True" />
             </StackPanel>
             
         </TabItem>
         
+        <TabItem Header="Календарь">
+            <StackPanel>
+                <Calendar HorizontalAlignment="Center" SelectionMode="SingleDate">
+                    <Calendar.Styles>
+                        <Style Selector="CalendarDayButton">
+                            <Setter Property="ContextMenu">
+                                <Setter.Value>
+                                    <ContextMenu>
+                                        <MenuItem Header="Написать заметку"/>
+                                    </ContextMenu>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Calendar.Styles>
+                </Calendar>
+            </StackPanel>
+        </TabItem>
+
+        
         <TabItem Header="Настройки">
             <StackPanel>
                 <ToggleSwitch Content="Тёмная тема" IsCheckedChanged="ToggleButton_OnIsCheckedChanged" ></ToggleSwitch>
-                <TextBlock Margin="0 20 0 10" Text="Потяните для выхода из приложения"/>
+                <TextBlock FontSize="11" Margin="0 20 0 10" Text="Потяните для выхода из приложения"/>
                 <ProgressBar HorizontalAlignment="Left" Width="100" ShowProgressText="True" Value="{Binding #hprogress.Value}" ></ProgressBar>
                 <Slider Name="hprogress" TickPlacement="Outside" HorizontalAlignment="Left" Width="200" ValueChanged="RangeBase_OnValueChanged" ></Slider>
             </StackPanel>

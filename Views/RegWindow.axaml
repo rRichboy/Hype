@@ -1,0 +1,58 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="400" Height="500"
+        x:Class="Hype.Views.RegWindow"
+        RequestedThemeVariant="Light"
+        Icon="/Assets/rick.ico"
+        Title="Регистрация">
+        
+        <Window.Styles>
+                <Style>
+                        <Style Selector="TextBox">
+                                <Setter Property="Width" Value="300"></Setter>
+                        </Style>
+                </Style>
+        </Window.Styles>
+        
+        <StackPanel x:Name="registrationPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <!-- Заголовок -->
+                <Grid>
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 -30">Регистрация</TextBlock>
+                        <Button Click="Login_OnClick" Margin="0 -5 5 35" Width="75" Content="Войти" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Brown"></Button>
+                </Grid>
+
+                <!-- Выбор имени пользователя -->
+                <TextBlock Margin="0 -10 114 0">Выбери имя пользователя:</TextBlock>
+                <TextBox x:Name="username"></TextBox>
+                <TextBlock  Foreground="Red" Margin="0 7 0 0" x:Name="username1"></TextBlock>
+
+                <!-- Выбор пароля -->
+                <TextBlock Margin="0 10 190 0">Выбери пароль:</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                        
+                        <TextBox Margin="0 0 0 0"
+                                 x:Name="password"
+                                 Classes="revealPasswordButton"
+                                 PasswordChar="*"/>
+                </StackPanel>
+                <TextBlock Foreground="Red" Margin="0 7 0 0" x:Name="password1"></TextBlock>
+
+                <!-- Подтверждение возраста -->
+                <Border Margin="0 10 0 0" CornerRadius="4" BorderThickness="1" BorderBrush="Black" Width="300">
+                        <CheckBox x:Name="CheckBox" Margin="0 0 100 0" HorizontalAlignment="Center">Мне больше 18 лет.</CheckBox>
+                </Border>
+                <TextBlock Foreground="Red" Margin="0 7 0 0" x:Name="CheckBox1"></TextBlock>
+
+                <!-- Ссылка на правила -->
+                <TextBlock Margin="10 10 119 0" FontSize="11">Я ознакомился (ознакомилась) с </TextBlock>
+
+                <!-- Кнопка регистрации -->
+                <Button Width="300" Margin="0 40 0 0" HorizontalAlignment="Center" Content="Регистрация" HorizontalContentAlignment="Center" Background="Green" Click="Reg_OnClick"></Button>
+                
+        </StackPanel>
+
+        
+</Window>

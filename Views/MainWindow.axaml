@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Hype.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Hype.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        RequestedThemeVariant="Light"
+        Icon="/Assets/rick.ico"
+        Title="Hype">
+    
+    
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <TabControl>
+        <TabItem Header="Профиль">
+            
+            <StackPanel Spacing="10">
+                <ProgressBar VerticalAlignment="Center" Width="10" IsIndeterminate="True" />
+            </StackPanel>
+            
+        </TabItem>
+        
+        <TabItem Header="Настройки">
+            <StackPanel>
+                <ToggleSwitch Content="Тёмная тема" IsCheckedChanged="ToggleButton_OnIsCheckedChanged" ></ToggleSwitch>
+                <TextBlock Margin="0 20 0 10" Text="Потяните для выхода из приложения"/>
+                <ProgressBar HorizontalAlignment="Left" Width="100" ShowProgressText="True" Value="{Binding #hprogress.Value}" ></ProgressBar>
+                <Slider Name="hprogress" TickPlacement="Outside" HorizontalAlignment="Left" Width="200" ValueChanged="RangeBase_OnValueChanged" ></Slider>
+            </StackPanel>
+        </TabItem>
+        
+    </TabControl>
+    
+</Window>

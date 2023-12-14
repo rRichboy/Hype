@@ -28,13 +28,18 @@
         
         <TabItem Header="Календарь">
             <StackPanel>
-                <Calendar HorizontalAlignment="Center" SelectionMode="SingleDate">
+                <Calendar x:Name="calendar" HorizontalAlignment="Center" SelectionMode="SingleDate">
                     <Calendar.Styles>
                         <Style Selector="CalendarDayButton">
                             <Setter Property="ContextMenu">
                                 <Setter.Value>
                                     <ContextMenu>
-                                        <MenuItem Header="Написать заметку"/>
+                                        <MenuItem Click="MenuItem_OnClick" Header="Написать заметку"/>
+                                        <MenuItem Header="Выделить цветом">
+                                            <MenuItem Header="Красный" Foreground="Red"   />
+                                            <MenuItem Header="Жёлтый" Foreground="Yellow"  />
+                                            <MenuItem Header="Зеленый" Foreground="Green"  />
+                                        </MenuItem>
                                     </ContextMenu>
                                 </Setter.Value>
                             </Setter>
@@ -42,6 +47,15 @@
                     </Calendar.Styles>
                 </Calendar>
             </StackPanel>
+        </TabItem>
+        
+        <TabItem Header="Заметки">
+            <Grid>
+                
+            <TextBlock Text="Дата" ></TextBlock>
+            <TextBlock Margin="40 0 0 0 " 
+                       Text="{Binding #calendar.SelectedDate}"/>
+            </Grid>
         </TabItem>
 
         

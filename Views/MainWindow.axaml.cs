@@ -30,6 +30,10 @@ public partial class MainWindow : Window
         {
             Environment.Exit(0);
         }
+    }
 
+    private void MenuItem_OnClick(object? sender, RoutedEventArgs e)
+    {
+        
     }
 }

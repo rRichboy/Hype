@@ -22,7 +22,7 @@
         <TabItem Header="Профиль">
             
             <StackPanel Spacing="10">
-                <ProgressBar VerticalAlignment="Center" Width="10" IsIndeterminate="True" />
+                <ProgressBar Margin=" 0 10 0 0" VerticalAlignment="Center" Width="10" IsIndeterminate="True" />
             </StackPanel>
             
         </TabItem>

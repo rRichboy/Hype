@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics.SymbolStore;
 using Avalonia.Controls;
+using Avalonia.Controls.Notifications;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Media;
@@ -34,6 +35,6 @@ public partial class MainWindow : Window
 
     private void MenuItem_OnClick(object? sender, RoutedEventArgs e)
     {
-        
+        Notes.IsVisible = true;
     }
 }

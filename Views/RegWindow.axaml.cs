@@ -53,8 +53,7 @@ public partial class RegWindow : Window
         this.Close();
         
     }
-
-
+    
     private void ShowPassword_OnClick(object? sender, RoutedEventArgs e)
     {
         password.PasswordChar = password.PasswordChar == '*' ? '\0' : '*';

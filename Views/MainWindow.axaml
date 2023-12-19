@@ -10,28 +10,25 @@
         Icon="/Assets/rick.ico"
         Title="Hype">
     
-    
-
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
     
-   
-    
     <TabControl>
-    
         <!-->
     <Notification  x:Name="myNotification" Title="Уведомление" Message="Успешная авторизация" />    
         <!-->
         
+        <!-- Профиль -->
         <TabItem Header="Профиль">
             <StackPanel Spacing="10">
                 <ProgressBar Margin=" 0 10 0 0" VerticalAlignment="Center" Width="10" IsIndeterminate="True" />
             </StackPanel>
         </TabItem>
         
+        <!-- Календарь -->
         <TabItem Header="Календарь">
             <StackPanel>
                 <Calendar x:Name="calendar" HorizontalAlignment="Center" VerticalAlignment="Center" SelectionMode="SingleDate">
@@ -55,23 +52,31 @@
             </StackPanel>
         </TabItem>
         
-        <TabItem Name="Notes" IsVisible="True" Header="Заметки">
+        <!-- Заметки -->
+        <TabItem Name="Notes" IsVisible="False" Header="Заметки">
             <Grid>
                 <StackPanel>
-                    <DataGrid ItemsSource="{Binding Notes}" x:Name="notesDataGrid" GridLinesVisibility="All" AutoGenerateColumns="False">
+                    <DataGrid ItemsSource="{Binding Notes}" x:Name="notesDataGrid" 
+                              GridLinesVisibility="All"
+                              BorderThickness="1" BorderBrush="Gray"
+                              IsReadOnly="True"
+                              CanUserSortColumns="False"
+                              VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Auto"
+                              VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Дата" Width="120" Binding="{Binding Dates}"/>
-                            <DataGridTextColumn Header="Заметка" Width="300" Binding="{Binding NoteText}"/>
+                            <DataGridTextColumn Header="Дата" Width="200" Binding="{Binding Dates}" />
+                            <DataGridTextColumn Header="Заметка" Width="570" Binding="{Binding NoteText}"/>
                         </DataGrid.Columns>
                     </DataGrid>
-
-                    <!--<TextBox x:Name="noteTextBox" Margin="0 10" Watermark="Введите заметку" />
-                    <Button Content="Сохранить" Margin="0 10"/>-->
+                    <TextBox HorizontalAlignment="Left" x:Name="noteTextBox" Width="300" Margin="0  50 0 5" Watermark="Введите заметку"/>
+                    <Button Content="Сохранить" Click="SaveNote_OnClick"/>
                 </StackPanel>
             </Grid>
         </TabItem>
 
-        
+        <!-- Настройки -->
         <TabItem Header="Настройки">
             <StackPanel>
                 <ToggleSwitch Content="Тёмная тема" OffContent="Светлая" OnContent="Тёмная" IsCheckedChanged="ToggleButton_OnIsCheckedChanged" ></ToggleSwitch>
@@ -81,5 +86,4 @@
             </StackPanel>
         </TabItem>
     </TabControl>
-    
 </Window>

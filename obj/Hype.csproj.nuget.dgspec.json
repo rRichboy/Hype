@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[11.0.2, )"
             },
+            "Avalonia.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
             "Avalonia.Desktop": {
               "target": "Package",
               "version": "[11.0.2, )"

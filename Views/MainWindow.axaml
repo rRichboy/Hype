@@ -40,8 +40,8 @@
                             <Setter Property="ContextMenu">
                                 <Setter.Value>
                                     <ContextMenu>
-                                        <MenuItem Click="MenuItem_OnClick" Header="Написать заметку"/>
-                                        <MenuItem Header="Выделить цветом">
+                                        <MenuItem Click="WriteNote_OnClick" Header="Написать заметку"/>
+                                        <MenuItem IsEnabled="False" Header="Выделить цветом">
                                             <MenuItem Header="Красный" Foreground="Red"   />
                                             <MenuItem Header="Жёлтый" Foreground="Yellow"  />
                                             <MenuItem Header="Зеленый" Foreground="Green"  />
@@ -55,11 +55,19 @@
             </StackPanel>
         </TabItem>
         
-        <TabItem Name="Notes" IsVisible="False" Header="Заметки">
+        <TabItem Name="Notes" IsVisible="True" Header="Заметки">
             <Grid>
-            <TextBlock Text="Дата" ></TextBlock>
-            <TextBlock Margin="40 0 0 0 " 
-                       Text="{Binding #calendar.SelectedDate}"/>
+                <StackPanel>
+                    <DataGrid ItemsSource="{Binding Notes}" x:Name="notesDataGrid" GridLinesVisibility="All" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Дата" Width="120" Binding="{Binding Dates}"/>
+                            <DataGridTextColumn Header="Заметка" Width="300" Binding="{Binding NoteText}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <!--<TextBox x:Name="noteTextBox" Margin="0 10" Watermark="Введите заметку" />
+                    <Button Content="Сохранить" Margin="0 10"/>-->
+                </StackPanel>
             </Grid>
         </TabItem>
 

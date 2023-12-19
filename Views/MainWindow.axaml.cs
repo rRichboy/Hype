@@ -7,6 +7,7 @@ using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Styling;
 using HarfBuzzSharp;
+using Hype.ViewModels;
 
 namespace Hype.Views;
 
@@ -15,6 +16,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        DataContext = new MainWindowViewModel();
     }
 
     private void ToggleButton_OnIsCheckedChanged(object? sender, RoutedEventArgs e)
@@ -33,8 +35,9 @@ public partial class MainWindow : Window
         }
     }
 
-    private void MenuItem_OnClick(object? sender, RoutedEventArgs e)
+    private void WriteNote_OnClick(object? sender, RoutedEventArgs e)
     {
         Notes.IsVisible = true;
+        Notes.IsSelected = true;
     }
 }

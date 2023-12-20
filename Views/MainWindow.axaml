@@ -17,10 +17,6 @@
     </Design.DataContext>
     
     <TabControl>
-        <!-->
-    <Notification  x:Name="myNotification" Title="Уведомление" Message="Успешная авторизация" />    
-        <!-->
-        
         <!-- Профиль -->
         <TabItem Header="Профиль">
             <StackPanel Spacing="10">
@@ -39,9 +35,9 @@
                                     <ContextMenu>
                                         <MenuItem Click="WriteNote_OnClick" Header="Написать заметку"/>
                                         <MenuItem IsEnabled="False" Header="Выделить цветом">
-                                            <MenuItem Header="Красный" Foreground="Red"   />
-                                            <MenuItem Header="Жёлтый" Foreground="Yellow"  />
-                                            <MenuItem Header="Зеленый" Foreground="Green"  />
+                                            <MenuItem Header="Красный" Foreground="Red"/>
+                                            <MenuItem Header="Жёлтый" Foreground="Yellow"/>
+                                            <MenuItem Header="Зеленый" Foreground="Green"/>
                                         </MenuItem>
                                     </ContextMenu>
                                 </Setter.Value>
@@ -58,20 +54,28 @@
                 <StackPanel>
                     <DataGrid ItemsSource="{Binding Notes}" x:Name="notesDataGrid" 
                               GridLinesVisibility="All"
-                              BorderThickness="1" BorderBrush="Gray"
-                              IsReadOnly="True"
-                              CanUserSortColumns="False"
-                              VerticalScrollBarVisibility="Auto"
-                              HorizontalScrollBarVisibility="Auto"
-                              VerticalAlignment="Stretch"
-                              HorizontalAlignment="Stretch">
+                              BorderThickness="1" BorderBrush="Black"
+                              MaxHeight="200"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Height="202"
+                              IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Дата" Width="200" Binding="{Binding Dates}" />
                             <DataGridTextColumn Header="Заметка" Width="570" Binding="{Binding NoteText}"/>
                         </DataGrid.Columns>
+                        
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Click="ChangeNote_OnClick" Header="Изменить"/>
+                                <MenuItem Click="SaveChangeNote_OnClick" Header="Сохранить" />
+                                <MenuItem Click="DeleteNote_OnClick" Header="Удалить" />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                        
                     </DataGrid>
-                    <TextBox HorizontalAlignment="Left" x:Name="noteTextBox" Width="300" Margin="0  50 0 5" Watermark="Введите заметку"/>
-                    <Button Content="Сохранить" Click="SaveNote_OnClick"/>
+                    <TextBox HorizontalAlignment="Center" x:Name="noteTextBox" Width="300" Margin="0  50 0 5" Watermark="Введите заметку"/>
+                    <Button HorizontalAlignment="Center" Content="Сохранить" Click="SaveNote_OnClick"/>
                 </StackPanel>
             </Grid>
         </TabItem>

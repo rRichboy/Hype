@@ -46,7 +46,7 @@
             <TabItem.Header>
                 <StackPanel>
                 <Image Source="../Assets/AllTheme/icons8-пользователь-мужчина-в-кружке-50.png"/>
-                    <TextBlock FontSize="20" Text="Профиль" />
+                    <TextBlock Margin="0 0 0 3" FontSize="20" Text="Профиль" />
                 </StackPanel>
             </TabItem.Header>
             <StackPanel Spacing="10">
@@ -60,7 +60,7 @@
             <TabItem.Header>
                 <StackPanel>
                 <Image Source="../Assets/AllTheme/icons8-календарь-50.png"/>
-                    <TextBlock FontSize="20" Text="Календарь" />
+                    <TextBlock Margin="0 0 0 3" FontSize="20" Text="Календарь" />
                 </StackPanel>
             </TabItem.Header>
             <StackPanel>
@@ -86,11 +86,11 @@
         </TabItem>
         
         <!-- Заметки -->
-        <TabItem Name="Notes" IsVisible="False">
+        <TabItem Name="Notes" IsVisible="True">
             <TabItem.Header>
                 <StackPanel>
                 <Image Source="../../Assets/AllTheme/icons8-заметки-50.png"/>
-                    <TextBlock FontSize="20" Text="Заметки" />
+                    <TextBlock Margin="0 0 0 3" FontSize="20" Text="Заметки" />
                 </StackPanel>
             </TabItem.Header>
             <Grid>
@@ -110,6 +110,7 @@
                     </DataGrid>
                     <TextBox HorizontalAlignment="Center" x:Name="noteTextBox" Width="300" Margin="0  50 0 5" Watermark="Введите заметку"/>
                     <Button HorizontalAlignment="Center" Content="Сохранить" Click="SaveNote_OnClick"/>
+                    <TextBox HorizontalAlignment="Center" x:Name="searchTextBox" Width="300" Margin="0 5 0 5" Watermark="Поиск по заметкам" KeyUp="SearchTextBox_OnKeyUp"/>
                 </StackPanel>
             </Grid>
         </TabItem>
@@ -119,7 +120,7 @@
             <TabItem.Header>
                 <StackPanel>
                 <Image Source="../Assets/AllTheme/icons8-настройки-50.png"/>
-                    <TextBlock FontSize="20" Text="Настройки" />
+                    <TextBlock Margin="0 0 0 3" FontSize="20" Text="Настройки" />
                 </StackPanel>
             </TabItem.Header>
             <StackPanel Margin="0 20 0 0" >

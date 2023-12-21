@@ -4,12 +4,15 @@ using System.Diagnostics.SymbolStore;
 using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
 using Avalonia.Controls.Primitives;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Styling;
 using HarfBuzzSharp;
 using Hype.Models;
 using Hype.ViewModels;
+using System.Linq;
+
 
 namespace Hype.Views;
 
@@ -50,7 +53,7 @@ public partial class MainWindow : Window
     //Сохранить заметку
     public void SaveNote_OnClick(object? sender, RoutedEventArgs e)
     {
-        viewModel.SaveNote(noteTextBox);
+        viewModel.SaveNote(noteTextBox, notesDataGrid);
     }
 
     //Изменить заметку
@@ -68,12 +71,13 @@ public partial class MainWindow : Window
     //Удалить выбранную заметку
     private void DeleteNote_OnClick(object? sender, RoutedEventArgs e)
     {
-        var selectedNote = notesDataGrid.SelectedItem as Note;
-
-        if (selectedNote != null)
-        {
-            (notesDataGrid.ItemsSource as ObservableCollection<Note>).Remove(selectedNote);
-        }
+        viewModel.DeleteNote(notesDataGrid);
+    }
+    
+    //Найти заметку
+    private void SearchTextBox_OnKeyUp(object sender, KeyEventArgs e)
+    {
+        var filteredNotes = viewModel.SearchTextBox(searchTextBox);
+        notesDataGrid.ItemsSource = filteredNotes;
     }
 }
-

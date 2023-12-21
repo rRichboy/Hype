@@ -22,7 +22,7 @@ public class MainWindowViewModel : ViewModelBase
     //Метод сохранения заметки
     public void SaveNote(TextBox noteTextBox)
     {
-        Notes.Add(new Note { Dates = DateTime.Today, NoteText = noteTextBox.Text });
+        Notes.Add(new Note { Dates = DateTime.Now, NoteText = noteTextBox.Text });
         noteTextBox.Text = string.Empty;
     }
 }

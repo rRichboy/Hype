@@ -18,14 +18,26 @@
     
     <TabControl>
         <!-- Профиль -->
-        <TabItem Header="Профиль">
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel>
+                <Image Source="../Assets/icons8-пользователь-мужчина-в-кружке-50.png" Width="40" Height="40" ></Image>
+                    <TextBlock FontSize="20" Text="Профиль" />
+                </StackPanel>
+            </TabItem.Header>
             <StackPanel Spacing="10">
-                <ProgressBar Margin=" 0 10 0 0" VerticalAlignment="Center" Width="10" IsIndeterminate="True" />
-            </StackPanel>
+                    <ProgressBar Margin=" 0 10 0 0" VerticalAlignment="Center" Width="10" IsIndeterminate="True" />
+                </StackPanel>
         </TabItem>
         
         <!-- Календарь -->
-        <TabItem Header="Календарь">
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel>
+                <Image Source="../Assets/icons8-календарь-50.png" Width="40" Height="40" ></Image>
+                    <TextBlock FontSize="20" Text="Календарь" />
+                </StackPanel>
+            </TabItem.Header>
             <StackPanel>
                 <Calendar x:Name="calendar" HorizontalAlignment="Center" VerticalAlignment="Center" SelectionMode="SingleDate">
                     <Calendar.Styles>
@@ -49,7 +61,13 @@
         </TabItem>
         
         <!-- Заметки -->
-        <TabItem Name="Notes" IsVisible="False" Header="Заметки">
+        <TabItem Name="Notes" IsVisible="False">
+            <TabItem.Header>
+                <StackPanel>
+                <Image Source="../Assets/icons8-заметки-50.png" Width="40" Height="40" ></Image>
+                    <TextBlock FontSize="20" Text="Заметки" />
+                </StackPanel>
+            </TabItem.Header>
             <Grid>
                 <StackPanel>
                     <DataGrid ItemsSource="{Binding Notes}" x:Name="notesDataGrid" 
@@ -81,7 +99,13 @@
         </TabItem>
 
         <!-- Настройки -->
-        <TabItem Header="Настройки">
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel>
+                <Image Source="../Assets/icons8-настройки-50.png" Width="40" Height="40" ></Image>
+                    <TextBlock FontSize="20" Text="Настройки" />
+                </StackPanel>
+            </TabItem.Header>
             <StackPanel>
                 <ToggleSwitch Content="Тёмная тема" OffContent="Светлая" OnContent="Тёмная" IsCheckedChanged="ToggleButton_OnIsCheckedChanged" ></ToggleSwitch>
                 <TextBlock FontSize="11" Margin="0 20 0 10" Text="Потяните для выхода из приложения"/>

@@ -9,11 +9,9 @@
         Title="Регистрация">
         
         <Window.Styles>
-                <Style>
                         <Style Selector="TextBox">
-                                <Setter Property="Width" Value="300"></Setter>
+                                <Setter Property="Width" Value="300"/>
                         </Style>
-                </Style>
         </Window.Styles>
         
         <StackPanel x:Name="registrationPanel" HorizontalAlignment="Center" VerticalAlignment="Center">

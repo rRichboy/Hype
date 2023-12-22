@@ -82,8 +82,20 @@ public partial class MainWindow : Window
     }
 
     //Изменить цвет
-    private void ChangeColorDG_OnClick(object? sender, RoutedEventArgs e)
+    private void ChangeColorDG_Khaki_OnClick(object? sender, RoutedEventArgs e)
     { 
-        viewModel.ChangeColorDG(notesDataGrid);
+        viewModel.ChangeColorDGKhaki(notesDataGrid);
+    }
+    
+    //Изменить цвет
+    private void ChangeColorDG_Lavanda_OnClick(object? sender, RoutedEventArgs e)
+    { 
+        viewModel.ChangeColorDGLavanda(notesDataGrid);
+    }
+    
+    //Изменить цвет
+    private void ChangeColorDG_Coral_OnClick(object? sender, RoutedEventArgs e)
+    { 
+        viewModel.ChangeColorDGCoral(notesDataGrid);
     }
 }

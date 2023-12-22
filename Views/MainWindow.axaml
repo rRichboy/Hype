@@ -34,17 +34,14 @@
            <Setter Property="Height" Value="202" />
            <Setter Property="BorderThickness" Value="1"/>
            <Setter Property="BorderBrush" Value="Black"/>
-           
        </Style> 
         
-        
+        <!-- Стиль Кнопки - лупа  -->
         <Style Selector="Button.search">
             <Setter Property="Background" Value="Transparent"/>
-            
             <Style Selector="^:pointerover /template/ ContentPresenter">
                 <Setter Property="Background" Value="Transparent"/>
             </Style>
-            
         </Style>
         
     </Window.Styles>
@@ -121,7 +118,11 @@
                                 <MenuItem Click="ChangeNote_OnClick" Header="Изменить"/>
                                 <MenuItem Click="SaveChangeNote_OnClick" Header="Сохранить" />
                                 <MenuItem Click="DeleteNote_OnClick" Header="Удалить" />
-                                <MenuItem Click="ChangeColorDG_OnClick" Header="Изменить цвет"/>
+                                <MenuItem Header="Изменить цвет">
+                                    <MenuItem Click="ChangeColorDG_Khaki_OnClick" Header="Хаки"/>
+                                    <MenuItem Click="ChangeColorDG_Lavanda_OnClick" Header="Лавандовый" />
+                                    <MenuItem Click="ChangeColorDG_Coral_OnClick" Header="Кораловый" />
+                                </MenuItem>
                             </ContextMenu>
                         </DataGrid.ContextMenu>
                     </DataGrid>

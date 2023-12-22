@@ -55,8 +55,20 @@ public class MainWindowViewModel : ViewModelBase
     }
     
     //Изменение цвета Даты Грид
-    public void ChangeColorDG(DataGrid notesDataGrid)
+    public void ChangeColorDGKhaki(DataGrid notesDataGrid)
     {
-        notesDataGrid.RowBackground = Brushes.Aqua;
+        notesDataGrid.RowBackground = Brushes.Khaki;
+    }
+    
+    //Изменение цвета Даты Грид
+    public void ChangeColorDGLavanda(DataGrid notesDataGrid)
+    {
+        notesDataGrid.RowBackground = Brushes.LavenderBlush;
+    }
+    
+    //Изменение цвета Даты Грид
+    public void ChangeColorDGCoral(DataGrid notesDataGrid)
+    {
+        notesDataGrid.RowBackground = Brushes.Coral;
     }
 }

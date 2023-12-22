@@ -4699,11 +4699,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\glkho\\RiderProjects\\Hype\\Hype\\Hype.csproj",
+      "projectUniqueName": "C:\\Users\\glkho\\RiderProjects\\Hype\\Hype.csproj",
       "projectName": "Hype",
-      "projectPath": "C:\\Users\\glkho\\RiderProjects\\Hype\\Hype\\Hype.csproj",
+      "projectPath": "C:\\Users\\glkho\\RiderProjects\\Hype\\Hype.csproj",
       "packagesPath": "C:\\Users\\glkho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\glkho\\RiderProjects\\Hype\\Hype\\obj\\",
+      "outputPath": "C:\\Users\\glkho\\RiderProjects\\Hype\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\glkho\\AppData\\Roaming\\NuGet\\NuGet.Config",

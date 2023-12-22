@@ -13,16 +13,16 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Hype
-build_property.ProjectDir = C:\Users\glkho\RiderProjects\Hype\Hype\
+build_property.ProjectDir = C:\Users\glkho\RiderProjects\Hype\
 
-[C:/Users/glkho/RiderProjects/Hype/Hype/App.axaml]
+[C:/Users/glkho/RiderProjects/Hype/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/glkho/RiderProjects/Hype/Hype/Views/LoginWindow.axaml]
+[C:/Users/glkho/RiderProjects/Hype/Views/LoginWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/glkho/RiderProjects/Hype/Hype/Views/MainWindow.axaml]
+[C:/Users/glkho/RiderProjects/Hype/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/glkho/RiderProjects/Hype/Hype/Views/RegWindow.axaml]
+[C:/Users/glkho/RiderProjects/Hype/Views/RegWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

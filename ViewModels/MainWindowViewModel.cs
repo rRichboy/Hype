@@ -5,6 +5,7 @@ using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
 using Avalonia.Controls.Primitives;
+using Avalonia.Media;
 using Hype.Models;
 
 namespace Hype.ViewModels;
@@ -12,7 +13,6 @@ namespace Hype.ViewModels;
 public class MainWindowViewModel : ViewModelBase
 {
     public static ObservableCollection<Note> Notes { get; set; }
-    
     
     public MainWindowViewModel()
     {
@@ -24,12 +24,12 @@ public class MainWindowViewModel : ViewModelBase
     {
         Notes.Add(new Note { Dates = DateTime.Now, NoteText = noteTextBox.Text });
         noteTextBox.Text = string.Empty;
-
-        // Обновляем DataGrid
+        
         notesDataGrid.ItemsSource = null;
         notesDataGrid.ItemsSource = Notes;
     }
     
+    //Удалить заметку
     public void DeleteNote(DataGrid notesDataGrid)
     {
         var selectedNote = notesDataGrid.SelectedItem as Note;
@@ -37,21 +37,26 @@ public class MainWindowViewModel : ViewModelBase
         if (selectedNote != null)
         {
             Notes.Remove(selectedNote);
+            
             notesDataGrid.ItemsSource = null;
             notesDataGrid.ItemsSource = Notes;
         }
     }
-    
-    
     
     //Метод поиска заметки
     public ObservableCollection<Note> SearchTextBox(TextBox searchTextBox)
     {
         string searchQuery = searchTextBox.Text;
 
-        // Поиск заметок по введенному слову
+        //Поиск заметки по введенному слову
         var filteredNotes = new ObservableCollection<Note>(Notes.Where(note => note.NoteText.Contains(searchQuery)));
 
         return filteredNotes;
+    }
+    
+    //Изменение цвета Даты Грид
+    public void ChangeColorDG(DataGrid notesDataGrid)
+    {
+        notesDataGrid.RowBackground = Brushes.Aqua;
     }
 }

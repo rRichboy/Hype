@@ -37,6 +37,16 @@
            
        </Style> 
         
+        
+        <Style Selector="Button.search">
+            <Setter Property="Background" Value="Transparent"/>
+            
+            <Style Selector="^:pointerover /template/ ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+            </Style>
+            
+        </Style>
+        
     </Window.Styles>
     
     
@@ -95,6 +105,12 @@
             </TabItem.Header>
             <Grid>
                 <StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Classes="search" Height="30" Width="30">
+                            <Image Width="26" Source="../Assets/AllTheme/icons8-лупа-64.png"/>
+                        </Button>
+                        <TextBox HorizontalAlignment="Center" x:Name="searchTextBox" Width="740" Margin="0 5 0 5" Watermark="Поиск по заметкам" KeyUp="SearchTextBox_OnKeyUp"/>
+                    </StackPanel>
                     <DataGrid ItemsSource="{Binding Notes}" x:Name="notesDataGrid">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Дата" Width="200" Binding="{Binding Dates}" />
@@ -105,12 +121,12 @@
                                 <MenuItem Click="ChangeNote_OnClick" Header="Изменить"/>
                                 <MenuItem Click="SaveChangeNote_OnClick" Header="Сохранить" />
                                 <MenuItem Click="DeleteNote_OnClick" Header="Удалить" />
+                                <MenuItem Click="ChangeColorDG_OnClick" Header="Изменить цвет"/>
                             </ContextMenu>
                         </DataGrid.ContextMenu>
                     </DataGrid>
-                    <TextBox HorizontalAlignment="Center" x:Name="noteTextBox" Width="300" Margin="0  50 0 5" Watermark="Введите заметку"/>
+                    <TextBox HorizontalAlignment="Center" x:Name="noteTextBox" Width="770" Margin="0  30 0 5" Watermark="Введите заметку"/>
                     <Button HorizontalAlignment="Center" Content="Сохранить" Click="SaveNote_OnClick"/>
-                    <TextBox HorizontalAlignment="Center" x:Name="searchTextBox" Width="300" Margin="0 5 0 5" Watermark="Поиск по заметкам" KeyUp="SearchTextBox_OnKeyUp"/>
                 </StackPanel>
             </Grid>
         </TabItem>

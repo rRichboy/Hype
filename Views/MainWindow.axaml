@@ -145,6 +145,13 @@
                 <TextBlock FontSize="12" Margin="0 10 0 10" Text="Потяните для выхода из приложения"/>
                 <ProgressBar HorizontalAlignment="Left" Width="100" ShowProgressText="True" Value="{Binding #hprogress.Value}"/>
                 <Slider Name="hprogress" TickPlacement="Outside" HorizontalAlignment="Left" Width="200" ValueChanged="RangeBase_OnValueChanged"/>
+                <!--<StackPanel>
+                    <TextBlock Text="{Binding OSInfo}"/>
+                    <TextBlock Text="{Binding ProcessorArchitecture}"/>
+                    <TextBlock Text="{Binding ProcessorCount}"/>
+                    <TextBlock Text="{Binding MachineName}"/>
+                    <TextBlock Text="{Binding UserName}"/>
+                </StackPanel>-->
             </StackPanel>
         </TabItem>
     </TabControl>

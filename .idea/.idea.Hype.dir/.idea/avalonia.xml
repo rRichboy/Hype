@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="Views/MainWindow.axaml" value="Hype.csproj" />
+        <entry key="Views/RegWindow.axaml" value="Hype.csproj" />
       </map>
     </option>
   </component>

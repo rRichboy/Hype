@@ -93,7 +93,7 @@
         </TabItem>
         
         <!-- Заметки -->
-        <TabItem Name="Notes" IsVisible="True">
+        <TabItem Name="Notes" IsVisible="False">
             <TabItem.Header>
                 <StackPanel>
                 <Image Source="../../Assets/AllTheme/icons8-заметки-50.png"/>
@@ -119,8 +119,6 @@
                                 <MenuItem Click="SaveChangeNote_OnClick" Header="Сохранить" />
                                 <MenuItem Click="DeleteNote_OnClick" Header="Удалить" />
                                 <MenuItem Header="Изменить цвет">
-                                    <MenuItem Click="ChangeColorDG_Khaki_OnClick" Header="Хаки"/>
-                                    <MenuItem Click="ChangeColorDG_Lavanda_OnClick" Header="Лавандовый" />
                                     <MenuItem Click="ChangeColorDG_Coral_OnClick" Header="Кораловый" />
                                 </MenuItem>
                             </ContextMenu>

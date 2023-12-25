@@ -80,20 +80,8 @@ public partial class MainWindow : Window
         var filteredNotes = viewModel.SearchTextBox(searchTextBox);
         notesDataGrid.ItemsSource = filteredNotes;
     }
-
-    //Изменить цвет
-    private void ChangeColorDG_Khaki_OnClick(object? sender, RoutedEventArgs e)
-    { 
-        viewModel.ChangeColorDGKhaki(notesDataGrid);
-    }
     
-    //Изменить цвет
-    private void ChangeColorDG_Lavanda_OnClick(object? sender, RoutedEventArgs e)
-    { 
-        viewModel.ChangeColorDGLavanda(notesDataGrid);
-    }
-    
-    //Изменить цвет
+    //Изменить цвет Дата Грид на Кораловый
     private void ChangeColorDG_Coral_OnClick(object? sender, RoutedEventArgs e)
     { 
         viewModel.ChangeColorDGCoral(notesDataGrid);

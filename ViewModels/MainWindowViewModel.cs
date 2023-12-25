@@ -24,15 +24,25 @@ public class MainWindowViewModel : ViewModelBase
         Notes = new ObservableCollection<Note>();
     }
 
-    //Метод сохранения заметки
-    public void SaveNote(TextBox noteTextBox, DataGrid notesDataGrid)
+    //Метод сохранения заметки с выбранной дато или просто с нынешней
+    public void SaveNote(TextBox noteTextBox, DataGrid notesDataGrid, DateTime selectedDate, TextBlock ErrorNotes)
     {
-        Notes.Add(new Note { Dates = DateTime.Now, NoteText = noteTextBox.Text });
-        noteTextBox.Text = string.Empty;
-        
-        notesDataGrid.ItemsSource = null;
-        notesDataGrid.ItemsSource = Notes;
+        if (string.IsNullOrEmpty(noteTextBox.Text))
+        {
+            ErrorNotes.Text = "Вы не написали заметку!";
+        }
+        else
+        {
+            ErrorNotes.Text = string.Empty;
+
+            Notes.Add(new Note { Dates = selectedDate, NoteText = noteTextBox.Text });
+            noteTextBox.Text = string.Empty;
+
+            notesDataGrid.ItemsSource = null;
+            notesDataGrid.ItemsSource = Notes;
+        }
     }
+
     
     //Удалить заметку
     public void DeleteNote(DataGrid notesDataGrid)

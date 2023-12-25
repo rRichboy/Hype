@@ -126,6 +126,7 @@
                     </DataGrid>
                     <TextBox HorizontalAlignment="Center" x:Name="noteTextBox" Width="770" Margin="0  30 0 5" Watermark="Введите заметку"/>
                     <Button HorizontalAlignment="Center" Content="Сохранить" Click="SaveNote_OnClick"/>
+                    <TextBlock x:Name="ErrorNotes" Text="" />
                 </StackPanel>
             </Grid>
         </TabItem>

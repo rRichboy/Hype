@@ -19,6 +19,8 @@ namespace Hype.Views;
 public partial class MainWindow : Window
 {
     private MainWindowViewModel viewModel;
+    
+    private DateTime selectedDate = DateTime.Now;
 
     public MainWindow()
     {
@@ -50,12 +52,24 @@ public partial class MainWindow : Window
         Notes.IsSelected = true;
     }
 
-    //Сохранить заметку
-    public void SaveNote_OnClick(object? sender, RoutedEventArgs e)
+    //Сохранить заметку с выбранным числом на календаре
+    private void SaveNote_OnClick(object? sender, RoutedEventArgs e)
     {
-        viewModel.SaveNote(noteTextBox, notesDataGrid);
-    }
+        if (calendar.SelectedDates.Count > 0)
+        {
+            selectedDate = calendar.SelectedDates[0];
+        }
+        else
+        {
+            selectedDate = DateTime.Now;
+        }
 
+        viewModel.SaveNote(noteTextBox, notesDataGrid, selectedDate, ErrorNotes);
+        
+        calendar.SelectedDates.Clear(); 
+        selectedDate = DateTime.Now;
+    }
+    
     //Изменить заметку
     private void ChangeNote_OnClick(object? sender, RoutedEventArgs e)
     {

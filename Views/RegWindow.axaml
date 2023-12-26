@@ -23,32 +23,32 @@
                 </Grid>
 
                 <!-- Выбор имени пользователя -->
-                <TextBlock Margin="0 -10 114 0">Выбери имя пользователя:</TextBlock>
-                <TextBox x:Name="username"></TextBox>
-                <TextBlock  Foreground="Red" Margin="0 7 0 0" x:Name="username1"></TextBlock>
+                <StackPanel>
+                        <TextBlock Text="Выбери имя пользователя:" Margin="2 0 0 0 " />
+                        <TextBox x:Name="username"/>
+                        <TextBlock Foreground="Red" x:Name="username1" Margin="2 7 0 0 " />
+                </StackPanel>
 
                 <!-- Выбор пароля -->
-                <TextBlock Margin="0 10 190 0">Выбери пароль:</TextBlock>
-                <StackPanel Orientation="Horizontal">
-                        
-                        <TextBox Margin="0 0 0 0"
-                                 x:Name="password"
-                                 Classes="revealPasswordButton"
-                                 PasswordChar="*"/>
+                <StackPanel>
+                        <TextBlock Text="Выбери пароль:" Margin="2 0 0 0 " />
+                        <StackPanel>
+                                <TextBox x:Name="password" Classes="revealPasswordButton" PasswordChar="*"/>
+                        </StackPanel>
+                        <TextBlock Foreground="Red" x:Name="password1" Margin="2 7 0 0 " />
                 </StackPanel>
-                <TextBlock Foreground="Red" Margin="0 7 0 0" x:Name="password1"></TextBlock>
-
+                
                 <!-- Подтверждение возраста -->
                 <Border Margin="0 10 0 0" CornerRadius="4" BorderThickness="1" BorderBrush="Black" Width="300">
-                        <CheckBox x:Name="CheckBox" Margin="0 0 100 0" HorizontalAlignment="Center">Мне больше 18 лет.</CheckBox>
+                        <CheckBox x:Name="CheckBox" Margin="0 0 100 0" HorizontalAlignment="Center" Content="Мне больше 18 лет."/>
                 </Border>
-                <TextBlock Foreground="Red" Margin="0 7 0 0" x:Name="CheckBox1"></TextBlock>
+                <TextBlock Foreground="Red" Margin="2 7 0 0 " x:Name="CheckBox1"/>
 
                 <!-- Ссылка на правила -->
                 <TextBlock Margin="10 10 119 0" FontSize="11">Я ознакомился (ознакомилась) с </TextBlock>
 
                 <!-- Кнопка регистрации -->
-                <Button Width="300" Margin="0 40 0 0" HorizontalAlignment="Center" Content="Регистрация" HorizontalContentAlignment="Center" Background="Green" Click="Reg_OnClick"></Button>
+                <Button Width="300" Margin="0 40 0 0" HorizontalAlignment="Center" Content="Регистрация" HorizontalContentAlignment="Center" Background="Green" Click="Reg_OnClick"/>
                 
         </StackPanel>
 

@@ -9,14 +9,12 @@
         Title="Авторизация">
         
         <Window.Styles>
-                <Style>
-                        <Style Selector="TextBox">
-                                <Setter Property="Width" Value="300"></Setter>
-                                <Setter Property="Height" Value="25"></Setter>
-                        </Style>
-                        <Style Selector="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-                        </Style>
+                <Style Selector="TextBox">
+                        <Setter Property="Width" Value="300"></Setter>
+                        <Setter Property="Height" Value="25"></Setter>
+                </Style>
+                <Style Selector="TextBlock">
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
                 </Style>
         </Window.Styles>
         
@@ -25,30 +23,29 @@
                 <!-- Заголовок -->
                 <Grid>
                         <TextBlock x:Name="Error" >Войти</TextBlock>
-                        <Button Click="RegWin_OnClick" Margin="0 -5 5 50" Content="Регистрация" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Brown"></Button>
+                        <Button Click="RegWin_OnClick" Margin="0 -5 5 50" Content="Регистрация" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Brown"/>
                 </Grid>
                 
                 <!-- Сообщение об ошибке -->
-                <Border x:Name="BorderError" IsVisible="False" Margin="0 0 0 40" CornerRadius="4" BorderThickness="1" BorderBrush="Black" Background="Ivory" Width="300" Height="25">
+                <Border x:Name="BorderError" IsVisible="False" Margin="0 0 0 40" CornerRadius="4" BorderThickness="1" BorderBrush="Black"  Width="300" Height="20">
                 <TextBlock Foreground="Red" >Неправильный логин или пароль</TextBlock>
                 </Border>
                 
                 <!-- Ввод имени пользователя -->
                 <TextBlock Margin="0 -10 138 0">Твоё имя пользователя:</TextBlock>
-                <TextBox x:Name="username"></TextBox>
+                <TextBox x:Name="username"/>
 
                 <!-- Ввод пароля -->
                 <TextBlock Margin="0 10 213 0">Твой пароль:</TextBlock>
                 <StackPanel Orientation="Horizontal">
                         
-                        <TextBox Margin="0 0 0 0"
-                                 x:Name="password"
+                        <TextBox x:Name="password"
                                  Classes="revealPasswordButton"
                                  PasswordChar="*"/>
                 </StackPanel>
                 
                 <!-- Кнопка входа -->
-                <Button Click="Login_OnClick" Margin="0 40 0 0" Width="300" HorizontalAlignment="Center" Content="Войти" HorizontalContentAlignment="Center" Background="Blue"></Button>
+                <Button Click="Login_OnClick" Margin="0 40 0 0" Width="300" HorizontalAlignment="Center" Content="Войти" HorizontalContentAlignment="Center" Background="Blue"/>
 
         </StackPanel>
         

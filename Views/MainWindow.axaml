@@ -84,6 +84,8 @@
                         <Style Selector="CalendarDayButton">
                             <Setter Property="ContextMenu">
                                 <Setter.Value>
+                                    
+                                    <!-- Контекст меню календаря -->
                                     <ContextMenu>
                                         <MenuItem Click="WriteNote_OnClick" Header="Написать заметку"/>
                                         <MenuItem IsEnabled="False" Header="Выделить цветом">
@@ -92,6 +94,8 @@
                                             <MenuItem Header="Зеленый" Foreground="Green"/>
                                         </MenuItem>
                                     </ContextMenu>
+                                    
+                                    
                                 </Setter.Value>
                             </Setter>
                         </Style>
@@ -131,6 +135,8 @@
                             <DataGridTextColumn Header="Дата" Width="200" Binding="{Binding Dates}" />
                             <DataGridTextColumn Header="Заметка" Width="570" Binding="{Binding NoteText}"/>
                         </DataGrid.Columns>
+                        
+                        <!-- Контекст меню заметок -->
                         <DataGrid.ContextMenu>
                             <ContextMenu>
                                 <MenuItem Click="ChangeNote_OnClick" Header="Изменить"/>

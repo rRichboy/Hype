@@ -54,11 +54,6 @@ public partial class RegWindow : Window
         
     }
     
-    private void ShowPassword_OnClick(object? sender, RoutedEventArgs e)
-    {
-        password.PasswordChar = password.PasswordChar == '*' ? '\0' : '*';
-    }
-
     private void Login_OnClick(object? sender, RoutedEventArgs e)
     {
         LoginWindow loginWindow = new LoginWindow();

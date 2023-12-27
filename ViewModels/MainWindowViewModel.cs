@@ -70,7 +70,7 @@ public class MainWindowViewModel : ViewModelBase
     }
     
     //Изменение цвета Даты Грид
-    public void ChangeColorDGCoral(DataGrid notesDataGrid)
+    public void ChangeColorDGCorall(DataGrid notesDataGrid)
     {
         notesDataGrid.RowBackground = Brushes.Coral;
     }

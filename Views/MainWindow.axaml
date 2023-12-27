@@ -88,7 +88,11 @@
                                     
                                     <!-- Контекст меню календаря -->
                                     <ContextMenu>
-                                        <MenuItem Click="WriteNote_OnClick" Header="Написать заметку"/>
+                                        <MenuItem Click="WriteNote_OnClick" Header="Написать заметку">
+                                        <MenuItem.Icon>
+                                            <Image Source="../Assets/AllTheme/icons8-goodnotes-32.png" />
+                                        </MenuItem.Icon>
+                                        </MenuItem>
                                         <MenuItem IsEnabled="False" Header="Выделить цветом">
                                             <MenuItem Header="Красный" Foreground="Red"/>
                                             <MenuItem Header="Жёлтый" Foreground="Yellow"/>
@@ -140,11 +144,27 @@
                         <!-- Контекст меню заметок -->
                         <DataGrid.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Click="ChangeNote_OnClick" Header="Изменить"/>
-                                <MenuItem Click="SaveChangeNote_OnClick" Header="Сохранить" />
-                                <MenuItem Click="DeleteNote_OnClick" Header="Удалить" />
+                                <MenuItem Click="ChangeNote_OnClick" Header="Изменить">
+                                    <MenuItem.Icon>
+                                        <Image Source="../Assets/AllTheme/icons8-редактировать-32.png" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Click="SaveChangeNote_OnClick" Header="Сохранить">
+                                    <MenuItem.Icon>
+                                        <Image Source="../Assets/AllTheme/icons8-сохранить-как-32.png" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Click="DeleteNote_OnClick" Header="Удалить">
+                                    <MenuItem.Icon>
+                                        <Image Source="../Assets/AllTheme/icons8-удалить-32.png" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
                                 <MenuItem Header="Изменить цвет">
-                                    <MenuItem Click="ChangeColorDG_Coral_OnClick" Header="Кораловый" />
+                                    <MenuItem.Icon>
+                                        <Image Source="../Assets/AllTheme/icons8-цвет-заливки-32.png" />
+                                    </MenuItem.Icon>
+                                    <MenuItem Click="ChangeColorDG_Corall_OnClick" Header="Коралловый">
+                                    </MenuItem>
                                 </MenuItem>
                             </ContextMenu>
                         </DataGrid.ContextMenu>

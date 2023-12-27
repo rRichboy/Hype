@@ -95,10 +95,10 @@ public partial class MainWindow : Window
         notesDataGrid.ItemsSource = filteredNotes;
     }
     
-    //Изменить цвет Дата Грид на Кораловый
-    private void ChangeColorDG_Coral_OnClick(object? sender, RoutedEventArgs e)
+    //Изменить цвет Дата Грид на Коралловый
+    private void ChangeColorDG_Corall_OnClick(object? sender, RoutedEventArgs e)
     { 
-        viewModel.ChangeColorDGCoral(notesDataGrid);
+        viewModel.ChangeColorDGCorall(notesDataGrid);
         notesDataGrid.SelectedItem = null;
     }
 }

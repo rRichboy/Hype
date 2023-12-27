@@ -99,5 +99,6 @@ public partial class MainWindow : Window
     private void ChangeColorDG_Coral_OnClick(object? sender, RoutedEventArgs e)
     { 
         viewModel.ChangeColorDGCoral(notesDataGrid);
+        notesDataGrid.SelectedItem = null;
     }
 }

@@ -36,6 +36,7 @@
            <Setter Property="BorderBrush" Value="Black"/>
        </Style> 
         
+        
         <!-- Стиль Кнопки - лупа  -->
         <Style Selector="Button.search">
             <Setter Property="Background" Value="Transparent"/>
@@ -150,7 +151,7 @@
                     </DataGrid>
                     
                     <!-- Ошибка, ввод заметки, кнопка сохранить -->
-                    <TextBlock Foreground="Red" x:Name="ErrorNotes"/>
+                    <TextBlock FontSize="15" Foreground="Red" x:Name="ErrorNotes" Margin="0 0 0 0"/>
                     <TextBox HorizontalAlignment="Center" x:Name="noteTextBox" Width="770" Margin="0  30 0 5" Watermark="Введите заметку"/>
                     <Button HorizontalAlignment="Center" Content="Сохранить" Click="SaveNote_OnClick"/>
                     

@@ -155,7 +155,7 @@
                                         <Image Source="../Assets/AllTheme/icons8-редактировать-32.png" />
                                     </MenuItem.Icon>
                                 </MenuItem>
-                                <MenuItem Click="SaveChangeNote_OnClick" Header="Сохранить">
+                                <MenuItem x:Name="SaveNotes" Click="SaveChangeNote_OnClick" Header="Сохранить">
                                     <MenuItem.Icon>
                                         <Image Source="../Assets/AllTheme/icons8-сохранить-как-32.png" />
                                     </MenuItem.Icon>

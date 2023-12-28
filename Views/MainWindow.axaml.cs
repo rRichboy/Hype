@@ -27,6 +27,7 @@ public partial class MainWindow : Window
         InitializeComponent();
         viewModel = new MainWindowViewModel();
         DataContext = viewModel;
+        SaveNotes.IsEnabled = false;
     }
 
     //Смена темы
@@ -74,6 +75,8 @@ public partial class MainWindow : Window
     private void ChangeNote_OnClick(object? sender, RoutedEventArgs e)
     {
         notesDataGrid.IsReadOnly = false;
+        SaveNotes.IsEnabled = true;
+
     }
 
     //Сохранить измененную заметку

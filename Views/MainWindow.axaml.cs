@@ -22,6 +22,8 @@ public partial class MainWindow : Window
     
     private DateTime selectedDate = DateTime.Now;
 
+    private bool isNoteChanged = false;
+    
     public MainWindow()
     {
         InitializeComponent();
@@ -75,6 +77,7 @@ public partial class MainWindow : Window
     private void ChangeNote_OnClick(object? sender, RoutedEventArgs e)
     {
         notesDataGrid.IsReadOnly = false;
+        isNoteChanged = true;
         SaveNotes.IsEnabled = true;
 
     }
@@ -83,6 +86,9 @@ public partial class MainWindow : Window
     private void SaveChangeNote_OnClick(object? sender, RoutedEventArgs e)
     {
         notesDataGrid.IsReadOnly = true;
+        isNoteChanged = false;
+        SaveNotes.IsEnabled = false;
+        
     }
 
     //Удалить выбранную заметку

@@ -34,6 +34,12 @@
            <Setter Property="Height" Value="202" />
            <Setter Property="BorderThickness" Value="1"/>
            <Setter Property="BorderBrush" Value="Black"/>
+           
+           <!-- Стиль ДатаГрид убрал наводку на строчку -->
+           <Style.Resources>
+               <SolidColorBrush x:Key="DataGridRowHoveredBackgroundColor" Color="Transparent"/>
+           </Style.Resources>
+           
        </Style> 
         
         

@@ -13,11 +13,11 @@ namespace Hype.ViewModels;
 public class MainWindowViewModel : ViewModelBase
 {
     public static ObservableCollection<Note> Notes { get; set; }
-    // public string OSInfo => $"Версия: {System.Environment.OSVersion}";
-    // public string ProcessorArchitecture => $"Архитектура процессора: {(System.Environment.Is64BitOperatingSystem ? "64-битная" : "32-битная")}";
-    // public string ProcessorCount => $"Количество процессоров: {System.Environment.ProcessorCount}";
-    // public string MachineName => $"Имя устройства: {System.Environment.MachineName}";
-    // public string UserName => $"Имя пользователя: {System.Environment.UserName}";
+    public string OSInfo => $"Версия: {System.Environment.OSVersion}";
+    public string ProcessorArchitecture => $"Архитектура процессора: {(System.Environment.Is64BitOperatingSystem ? "64-битная" : "32-битная")}";
+    public string ProcessorCount => $"Количество процессоров: {System.Environment.ProcessorCount}";
+    public string MachineName => $"Имя устройства: {System.Environment.MachineName}";
+    public string UserName => $"Имя пользователя: {System.Environment.UserName}";
     
     public MainWindowViewModel()
     {

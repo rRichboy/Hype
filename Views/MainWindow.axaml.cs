@@ -22,7 +22,7 @@ public partial class MainWindow : Window
     
     private DateTime selectedDate = DateTime.Now;
 
-    private bool isNoteChanged = false;
+    private bool isNoteChanged;
     
     public MainWindow()
     {
@@ -79,7 +79,6 @@ public partial class MainWindow : Window
         notesDataGrid.IsReadOnly = false;
         isNoteChanged = true;
         SaveNotes.IsEnabled = true;
-
     }
 
     //Сохранить измененную заметку
@@ -87,8 +86,7 @@ public partial class MainWindow : Window
     {
         notesDataGrid.IsReadOnly = true;
         isNoteChanged = false;
-        SaveNotes.IsEnabled = false;
-        
+        SaveNotes.IsEnabled = false;        
     }
 
     //Удалить выбранную заметку
@@ -109,5 +107,15 @@ public partial class MainWindow : Window
     { 
         viewModel.ChangeColorDGCorall(notesDataGrid);
         notesDataGrid.SelectedItem = null;
+    }
+    
+    private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        string selectedOption = (myComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
+
+        if (selectedOption == "OSInfo")
+        {
+            SysInfo.IsVisible = true;
+        }
     }
 }

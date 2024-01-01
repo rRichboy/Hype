@@ -39,7 +39,6 @@
            <Style.Resources>
                <SolidColorBrush x:Key="DataGridRowHoveredBackgroundColor" Color="Transparent"/>
            </Style.Resources>
-           
        </Style> 
         
         
@@ -211,8 +210,38 @@
                     <TextBlock Text="{Binding UserName}"/>
                 </StackPanel>-->
             </StackPanel>
+        </TabItem>
+        
+        <TabItem>
+                
+            <TabItem.Header>
+                <StackPanel>
+                <Image Source="../Assets/AllTheme/icons8-информация-50.png"/>
+                <TextBlock Margin="0 0 0 3" FontSize="20" Text="Информация" />
+                </StackPanel>
+            </TabItem.Header>
             
+            <StackPanel>
+                <TextBlock Text="Версия 0.0.0.1"/>
+                 <ComboBox  x:Name="myComboBox" SelectionChanged="ComboBox_SelectionChanged" >
+                     <ComboBoxItem Content="OSInfo" />
+                     <ComboBoxItem Content="ProcessorArchitecture" />
+                     <ComboBoxItem Content="ProcessorCount" />
+                     <ComboBoxItem Content="MachineName" />
+                     <ComboBoxItem Content="UserName" />
+                 </ComboBox>
+                
+                <StackPanel x:Name="SysInfo" IsVisible="False">
+                    <TextBlock Text="{Binding OSInfo}"/>
+                    <TextBlock Text="{Binding ProcessorArchitecture}"/>
+                    <TextBlock Text="{Binding ProcessorCount}"/>
+                    <TextBlock Text="{Binding MachineName}"/>
+                    <TextBlock Text="{Binding UserName}"/>
+                </StackPanel>
+                
+            </StackPanel>
             
         </TabItem>
+        
     </TabControl>
 </Window>

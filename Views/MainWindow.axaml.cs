@@ -116,6 +116,7 @@ public partial class MainWindow : Window
         if (selectedOption == "OSInfo")
         {
             SysInfo.IsVisible = true;
+            
         }
     }
 }

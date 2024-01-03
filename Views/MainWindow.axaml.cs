@@ -108,15 +108,4 @@ public partial class MainWindow : Window
         viewModel.ChangeColorDGCorall(notesDataGrid);
         notesDataGrid.SelectedItem = null;
     }
-    
-    private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-        string selectedOption = (myComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
-
-        if (selectedOption == "OSInfo")
-        {
-            SysInfo.IsVisible = true;
-            
-        }
-    }
 }

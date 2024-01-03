@@ -202,18 +202,13 @@
                 <TextBlock FontSize="12" Margin="0 10 0 10" Text="Потяните для выхода из приложения"/>
                 <ProgressBar HorizontalAlignment="Left" Width="100" ShowProgressText="True" Value="{Binding #hprogress.Value}"/>
                 <Slider Name="hprogress" TickPlacement="Outside" HorizontalAlignment="Left" Width="200" ValueChanged="RangeBase_OnValueChanged"/>
-                <!--<StackPanel>
-                    <TextBlock Text="{Binding OSInfo}"/>
-                    <TextBlock Text="{Binding ProcessorArchitecture}"/>
-                    <TextBlock Text="{Binding ProcessorCount}"/>
-                    <TextBlock Text="{Binding MachineName}"/>
-                    <TextBlock Text="{Binding UserName}"/>
-                </StackPanel>-->
             </StackPanel>
         </TabItem>
         
+        <!-- Информация -->
         <TabItem>
                 
+            <!-- Иконка информации + название -->
             <TabItem.Header>
                 <StackPanel>
                 <Image Source="../Assets/AllTheme/icons8-информация-50.png"/>
@@ -221,24 +216,9 @@
                 </StackPanel>
             </TabItem.Header>
             
+            <!-- Основная стакпанель -->
             <StackPanel>
                 <TextBlock Text="Версия 0.0.0.1"/>
-                 <ComboBox  x:Name="myComboBox" SelectionChanged="ComboBox_SelectionChanged" >
-                     <ComboBoxItem Content="OSInfo" />
-                     <ComboBoxItem Content="ProcessorArchitecture" />
-                     <ComboBoxItem Content="ProcessorCount" />
-                     <ComboBoxItem Content="MachineName" />
-                     <ComboBoxItem Content="UserName" />
-                 </ComboBox>
-                
-                <StackPanel x:Name="SysInfo" IsVisible="False">
-                    <TextBlock Text="{Binding OSInfo}"/>
-                    <TextBlock Text="{Binding ProcessorArchitecture}"/>
-                    <TextBlock Text="{Binding ProcessorCount}"/>
-                    <TextBlock Text="{Binding MachineName}"/>
-                    <TextBlock Text="{Binding UserName}"/>
-                </StackPanel>
-                
             </StackPanel>
             
         </TabItem>
